@@ -56,7 +56,7 @@ export class HistorialProvider {
         htmlLink=htmlLink.replace(";SUB:","?subject=");
         htmlLink=htmlLink.replace(";BODY:","&body=");
         htmlLink=htmlLink.replace(";;","");
-        htmlLink=htmlLink.replace(/ /g,"%20:");
+        htmlLink=htmlLink.replace(/ /g,"%20");
 
         console.log(htmlLink);
 
