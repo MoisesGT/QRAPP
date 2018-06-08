@@ -49,6 +49,20 @@ export class HistorialProvider {
         this.crear_contacto(scanData.info);
       break
 
+      case "email":
+        let htmlLink= scanData.info;
+
+        htmlLink=htmlLink.replace("MATMSG:TO:","mailto:");
+        htmlLink=htmlLink.replace(";SUB:","?subject=");
+        htmlLink=htmlLink.replace(";BODY:","&body=");
+        htmlLink=htmlLink.replace(";;","");
+        htmlLink=htmlLink.replace(/ /g,"%20:");
+
+        console.log(htmlLink);
+
+        this.iab.create(htmlLink, "_system");
+      break
+
       default:
         console.error("Tipo no soportado");
     }
@@ -72,9 +86,9 @@ export class HistorialProvider {
     contact.phoneNumbers = [ new ContactField('mobile', tel)];
 
     contact.save().then(
-      () => this.crear_toast("Contacto " + contact.name + " creado"),
+      () => this.crear_toast("Contacto " + nombre + " creado"),
       (error) => this.crear_toast("Error: " + error)
-    )
+    );
 
   }
 
