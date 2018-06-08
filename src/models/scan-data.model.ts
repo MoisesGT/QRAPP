@@ -9,6 +9,8 @@ export class ScanData{
 
         if(texto.startsWith("http")){
             this.tipo="http";
+        }else if(texto.startsWith("geo")){
+            this.tipo="mapa";
         }
     }
 }
