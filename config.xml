@@ -84,4 +84,5 @@
     <plugin name="phonegap-plugin-barcodescanner" spec="^8.0.0" />
     <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
 </widget>
